@@ -2,8 +2,8 @@ package util
 
 import (
 	"bytes"
+	"fmt"
 	"io"
-	"log"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -47,7 +47,7 @@ func RequestResponseLogger() gin.HandlerFunc {
 		status := c.Writer.Status()
 		clientIP := c.ClientIP()
 
-		log.Printf("\n[LOG] %v | %3d | %13v | %-7s %-20s | IP: %s\n | req:%s | resp: %s",
+		InfoLog(fmt.Sprintf("\n[LOG] %v | %3d | %13v | %-7s %-20s | IP: %s\n | req:%s | resp: %s",
 			time.Now().Format("2006-01-02 15:04:05"),
 			status,
 			duration,
@@ -56,6 +56,6 @@ func RequestResponseLogger() gin.HandlerFunc {
 			clientIP,
 			string(requestBody),
 			blw.body.String(),
-		)
+		))
 	}
 }

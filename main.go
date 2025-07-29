@@ -4,11 +4,11 @@ import (
 	"fc_server/internal/util"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
-
 	"fc_server/internal"
 	"fc_server/internal/processor"
 	"fc_server/internal/processor/dto"
+
+	"github.com/gin-gonic/gin"
 )
 
 //// fetchRankHandler handles requests to /fetch_rank
@@ -76,6 +76,7 @@ func handleSuccess(c *gin.Context, response interface{}) {
 func main() {
 
 	internal.Init()
+	defer util.Logger().Sync()
 
 	r := gin.Default()
 	r.Use(util.RequestResponseLogger())
