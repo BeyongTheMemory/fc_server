@@ -3,7 +3,7 @@ package vo
 type AddressLevel uint16
 
 const (
-	Unknown AddressLevel = iota
+	Nation AddressLevel = iota // 全国(天榜)
 	Province
 	City
 	District

@@ -1,0 +1,23 @@
+# Binaries
+fc_server
+*.exe
+*.test
+*.out
+
+# Go
+vendor/
+
+# Logs
+logs/
+
+# Env / local config
+.env*
+!.env.example
+
+# Editor & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

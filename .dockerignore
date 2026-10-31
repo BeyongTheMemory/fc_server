@@ -1,0 +1,13 @@
+# 本机凭据:绝不能进镜像(云上从环境变量读取)
+.env*
+
+# 与构建无关
+.git
+.claude
+.specify
+specs
+deploy
+logs
+fc_server
+*.test
+*.md
